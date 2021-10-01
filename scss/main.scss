@@ -39,20 +39,6 @@ $transition: .3s ease;
               display: inline-block;
               padding: 40px 0;
               position: relative;
-              &::before{
-                  position: absolute;
-                  content: '';
-                  height: 3px;
-                  width: 0%;
-                  left: 0;
-                  bottom: 29px;
-                  background-color: red;
-                  transition: .3s ease;
-                  -webkit-transition: .3s ease;
-                  -moz-transition: .3s ease;
-                  -ms-transition: .3s ease;
-                  -o-transition: .3s ease;
-                }
           }
           &.active{
               & > a{
@@ -62,9 +48,6 @@ $transition: .3s ease;
           &:hover{
               & > a{
                   color: #000;
-              }
-              & a::before{
-                  width: 100%;
               }
               & .submenu{
                   visibility: visible;
