@@ -77,27 +77,11 @@ $transition: .3s ease;
                       color: $theme2ndColor;
                       font-weight: 500;
                       position: relative;
-                      &::before{
-                        position: absolute;
-                        content: '';
-                        height: 3px;
-                        width: 0%;
-                        left: 0;
-                        bottom: 29px;
-                        background-color: red;
-                        transition: .3s ease;
-                        -webkit-transition: .3s ease;
-                        -moz-transition: .3s ease;
-                        -ms-transition: .3s ease;
-                        -o-transition: .3s ease;
-                      }
+                      
                   }
                   &:hover{
                       & > a{
                           color: #c6c6e0;
-                      }
-                      & a::before{
-                          width: 100%;
                       }
                       & > .submenu{
                           visibility: visible;
