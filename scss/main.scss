@@ -1,0 +1,308 @@
+//defaul css
+a{
+	text-decoration: none;
+}
+// theme color var
+$themeColor:#FE3D4E;
+$theme2ndColor : #F7F5FF;
+$transition: .3s ease;
+//mixins
+@mixin temBtn {
+  padding: 15px 20px;
+  background-color: $themeColor;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+//https://www.devsnews.com/template/neeha/neeha/index-2.html
+
+//header css
+
+#header{
+  
+ padding: 0 185px;
+  & .main-menu{
+    & ul{
+      & li{
+          display: inline-block;
+          position: relative;
+          &:not(:last-child){
+              margin-right: 33px;
+          }
+          & a{
+              font-size: 14px;
+              text-transform: capitalize;
+              color: #4ed0e7;
+              font-weight: 500;
+              display: inline-block;
+              padding: 40px 0;
+              position: relative;
+              &::before{
+                  position: absolute;
+                  content: '';
+                  height: 3px;
+                  width: 0%;
+                  left: 0;
+                  bottom: 29px;
+                  background-color: red;
+                  transition: .3s ease;
+                  -webkit-transition: .3s ease;
+                  -moz-transition: .3s ease;
+                  -ms-transition: .3s ease;
+                  -o-transition: .3s ease;
+                }
+          }
+          &.active{
+              & > a{
+                  color: red;
+              }
+          }
+          &:hover{
+              & > a{
+                  color: #000;
+              }
+              & a::before{
+                  width: 100%;
+              }
+              & .submenu{
+                  visibility: visible;
+                  opacity: 1;
+                  top: 100%;
+              }
+          }
+          & .submenu{
+              position: absolute;
+              top: 120%;
+              left: 0;
+              width: 200px;
+              padding: 17px 0;
+              padding-bottom: 25px;
+              background: #301f1f;
+              visibility: hidden;
+              opacity: 0;
+              z-index: 1;
+              & li{
+                  display: block;
+                  margin-right: 0;
+                  & > a{
+                      width: 100%;
+                      display: block;
+                      padding: 3px 30px;
+                      text-transform: capitalize;
+                      color: $theme2ndColor;
+                      font-weight: 500;
+                      position: relative;
+                      &::before{
+                        position: absolute;
+                        content: '';
+                        height: 3px;
+                        width: 0%;
+                        left: 0;
+                        bottom: 29px;
+                        background-color: red;
+                        transition: .3s ease;
+                        -webkit-transition: .3s ease;
+                        -moz-transition: .3s ease;
+                        -ms-transition: .3s ease;
+                        -o-transition: .3s ease;
+                      }
+                  }
+                  &:hover{
+                      & > a{
+                          color: #c6c6e0;
+                      }
+                      & a::before{
+                          width: 100%;
+                      }
+                      & > .submenu{
+                          visibility: visible;
+                          opacity: 1;
+                          left: 100%;
+                      }
+                  }
+                  & .submenu{
+                      top: 0;
+                      left: 120%;
+                      visibility: hidden;
+                      opacity: 0;
+                  }
+              }
+          }
+      }
+    }
+  }
+
+  & .header_log{
+      & .header_btn{
+          margin-right: 15px;
+        @include temBtn()
+      }
+       & i {
+           height: 30px;
+           width: 30px;
+           border-radius: 50%;
+           line-height: 30px;
+           text-align: center;
+           -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+           -ms-border-radius: 50%;
+           -o-border-radius: 50%;
+           background-color: #f8ecd5;
+           box-shadow: 0 8px 16px 0 #bbb8b1;
+           color: #000;
+           font-size: 14px;
+          }  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // & .main-menu{
+  //   & ul{
+  //     & li{
+  //       display: inline-block;
+  //       position: relative;
+  //       &:not(:last-child){
+  //         margin-right: 20px;
+  //       }
+  //       & a{
+  //         padding: 20px 0px;
+  //         color: $themeColor;
+  //         text-transform: uppercase;
+  //         font-size: 14px;
+  //         transition: $transition;
+  //         -webkit-transition: $transition;
+  //         -moz-transition: $transition;
+  //         -ms-transition: $transition;
+  //         -o-transition: $transition;
+  //       }  
+
+  //       & .submenu{//1
+  //         position: absolute;
+  //         left: 0;
+  //         top: 120%;
+  //         width: 200px;
+  //         transition: $transition;
+  //         -webkit-transition: $transition;
+  //         -moz-transition: $transition;
+  //         -ms-transition: $transition;
+  //         -o-transition: $transition;
+  //         opacity: 0;
+  //         visibility: hidden;
+  //         background: #ac8383;
+  //         box-shadow: 0 0 0 red;
+  //         z-index: 5;
+  //         & li{//1
+  //           display: block;
+  //           &:not(:last-child){
+  //             margin-bottom: 10px;
+  //           }
+  //           &:hover{//1
+  //             & .submenu{
+  //               visibility: visible;
+  //               opacity: 1;
+  //             }
+
+  //             & > a{
+  //               color: #000;
+  //             }
+  //           }
+  //           & .submenu{//2
+  //             top: 0;
+  //             left: 100%;
+  //             opacity: 0;
+  //             visibility: hidden;
+  //             transition: $transition;
+  //             -webkit-transition: $transition;
+  //             -moz-transition: $transition;
+  //             -ms-transition: $transition;
+  //             -o-transition: $transition;
+  //             z-index: 16;
+  //              & li{//2
+  //                display: block;
+  //              }
+  //           }
+  //            & a{
+  //             width: 100%;
+  //             display: block;
+  //             padding: 3px 30px;
+  //             text-transform: capitalize;
+  //             color: $themeColor;
+  //             font-weight: 500;
+  //             position: relative;
+  //            }
+  //          }
+           
+  //         }
+  //       &:hover{
+  //         & > a {
+  //           color: #000;
+  //         }
+  //         & .submenu{
+  //           opacity: 1;
+  //           visibility: visible;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
+//hero css
+.hero_area{
+    background-color: #90baf1;
+    padding: 300px 0;
+    & .hero_txt{
+       & span{
+        color: #ff00b3;
+        font-size: 14px;
+       }
+       & h1{
+        color: #131010;
+        font-size: 85px;
+        line-height: 1.1;
+       }
+       & p{
+         padding-right: 25px;
+       }
+       & .hero_btn{
+           margin-top: 35px;
+           & .btn_left{
+               @include temBtn();
+               margin-right: 20px;              
+           }
+           & .btn_right{
+               & i{
+                   height: 45px;
+                   width: 45px;
+                   border-radius: 50%;
+                   -webkit-border-radius: 50%;
+                   -moz-border-radius: 50%;
+                   -ms-border-radius: 50%;
+                   -o-border-radius: 50%;
+                   background-color: #e0d1b3;
+                   line-height: 45px;
+                   text-align:center;
+                   font-size: 14px;
+                   color: #ffe;
+                   margin-right: 20px;
+}
+               & span{
+                color: #f0b0c6;
+               }
+           }
+       }
+    }
+}
